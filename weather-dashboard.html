@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="weather-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🌤️ Weather Dashboard</h1>
+            <p class="subtitle">Real-time weather information</p>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search for a city..." 
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">Search</button>
+                <button id="locationBtn" class="location-btn" title="Use my location">📍</button>
+            </div>
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message hidden"></div>
+
+        <!-- Main Content -->
+        <div id="weatherContent" class="weather-content hidden">
+            <!-- Current Weather -->
+            <div class="current-weather">
+                <div class="location-info">
+                    <h2 id="cityName"></h2>
+                    <p id="coordinates"></p>
+                    <p id="lastUpdate" class="last-update"></p>
+                </div>
+
+                <div class="weather-main">
+                    <div class="weather-icon-large">
+                        <span id="weatherIcon"></span>
+                    </div>
+                    <div class="temperature-section">
+                        <div class="temperature" id="temperature"></div>
+                        <div class="description" id="description"></div>
+                        <div class="feels-like" id="feelsLike"></div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="quick-stats">
+                    <div class="stat">
+                        <span class="stat-label">💧 Humidity</span>
+                        <span class="stat-value" id="humidity"></span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">💨 Wind Speed</span>
+                        <span class="stat-value" id="windSpeed"></span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">🌡️ Pressure</span>
+                        <span class="stat-value" id="pressure"></span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">👁️ Visibility</span>
+                        <span class="stat-value" id="visibility"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Information -->
+            <div class="detailed-section">
+                <!-- Hourly Forecast -->
+                <div class="forecast-card">
+                    <h3>📅 Hourly Forecast</h3>
+                    <div class="hourly-forecast" id="hourlyForecast"></div>
+                </div>
+
+                <!-- Additional Details -->
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <h4>🌅 UV Index</h4>
+                        <p id="uvIndex" class="detail-value">—</p>
+                    </div>
+                    <div class="detail-card">
+                        <h4>📈 Dew Point</h4>
+                        <p id="dewPoint" class="detail-value">—</p>
+                    </div>
+                    <div class="detail-card">
+                        <h4>💧 Precipitation</h4>
+                        <p id="precipitation" class="detail-value">—</p>
+                    </div>
+                    <div class="detail-card">
+                        <h4>🌬️ Wind Gust</h4>
+                        <p id="windGust" class="detail-value">—</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5-Day Forecast -->
+            <div class="forecast-card full-width">
+                <h3>📆 5-Day Forecast</h3>
+                <div class="daily-forecast" id="dailyForecast"></div>
+            </div>
+
+            <!-- Air Quality -->
+            <div class="forecast-card full-width">
+                <h3>🌍 Air Quality Index (AQI)</h3>
+                <div id="aqiSection" class="aqi-section"></div>
+            </div>
+        </div>
+
+        <!-- Initial State -->
+        <div id="initialState" class="initial-state">
+            <p>🔍 Search for a city or use your location to get started</p>
+        </div>
+    </div>
+
+    <script src="weather-script.js"></script>
+</body>
+</html>
