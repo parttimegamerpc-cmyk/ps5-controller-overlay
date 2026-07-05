@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS5 Controller Overlay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="overlay-container">
+        <div class="ps5-controller">
+            <!-- Left Side -->
+            <div class="left-side">
+                <!-- D-Pad -->
+                <div class="dpad">
+                    <button class="dpad-up" data-button="dpad-up"></button>
+                    <button class="dpad-right" data-button="dpad-right"></button>
+                    <button class="dpad-down" data-button="dpad-down"></button>
+                    <button class="dpad-left" data-button="dpad-left"></button>
+                </div>
+
+                <!-- Left Stick -->
+                <div class="stick-container left-stick">
+                    <div class="stick" id="left-stick">
+                        <div class="stick-inner"></div>
+                    </div>
+                    <button class="stick-button" data-button="l3"></button>
+                </div>
+            </div>
+
+            <!-- Center -->
+            <div class="center">
+                <!-- Touchpad -->
+                <div class="touchpad" id="touchpad"></div>
+
+                <!-- Speaker grille (decorative) -->
+                <div class="speaker-grille"></div>
+
+                <!-- Center Buttons -->
+                <div class="center-buttons">
+                    <button class="center-btn create-btn" data-button="create">
+                        <span class="btn-label">CREATE</span>
+                    </button>
+                    <button class="center-btn menu-btn" data-button="menu">
+                        <span class="btn-label">MENU</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="right-side">
+                <!-- Face Buttons -->
+                <div class="face-buttons">
+                    <button class="face-btn triangle-btn" data-button="triangle">
+                        <span class="button-symbol">△</span>
+                    </button>
+                    <button class="face-btn circle-btn" data-button="circle">
+                        <span class="button-symbol">◯</span>
+                    </button>
+                    <button class="face-btn cross-btn" data-button="cross">
+                        <span class="button-symbol">✕</span>
+                    </button>
+                    <button class="face-btn square-btn" data-button="square">
+                        <span class="button-symbol">□</span>
+                    </button>
+                </div>
+
+                <!-- Right Stick -->
+                <div class="stick-container right-stick">
+                    <div class="stick" id="right-stick">
+                        <div class="stick-inner"></div>
+                    </div>
+                    <button class="stick-button" data-button="r3"></button>
+                </div>
+            </div>
+
+            <!-- Shoulder Buttons -->
+            <div class="shoulder-buttons">
+                <button class="shoulder-btn l1-btn" data-button="l1">L1</button>
+                <button class="shoulder-btn l2-btn" data-button="l2">L2</button>
+                <button class="shoulder-btn r1-btn" data-button="r1">R1</button>
+                <button class="shoulder-btn r2-btn" data-button="r2">R2</button>
+            </div>
+
+            <!-- Mic and Options -->
+            <div class="bottom-buttons">
+                <button class="bottom-btn mic-btn" data-button="mic">🎤</button>
+                <button class="bottom-btn options-btn" data-button="options">⚙</button>
+            </div>
+
+            <!-- LED Indicator -->
+            <div class="led-indicator"></div>
+        </div>
+
+        <!-- Input Display -->
+        <div class="input-display">
+            <h2>Controller Input</h2>
+            <div class="input-log" id="input-log">
+                <p>Press buttons on the controller...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
