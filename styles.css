@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+.overlay-container {
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* PS5 Controller */
+.ps5-controller {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    border-radius: 50px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+}
+
+/* Left Side - D-Pad and Left Stick */
+.left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+/* D-Pad */
+.dpad {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.dpad-up, .dpad-right, .dpad-down, .dpad-left {
+    background: #333;
+    border: none;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    border-radius: 4px;
+}
+
+.dpad-up {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.dpad-right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.dpad-down {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.dpad-left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.dpad-up:active, .dpad-right:active, .dpad-down:active, .dpad-left:active {
+    background: #111;
+    transform: scale(0.95);
+}
+
+/* Analog Sticks */
+.stick-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.stick {
+    width: 100%;
+    height: 100%;
+    background: #444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.stick-inner {
+    width: 50px;
+    height: 50px;
+    background: #666;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.05s ease;
+}
+
+.stick-button {
+    position: absolute;
+    bottom: 5px;
+    width: 20px;
+    height: 20px;
+    background: #ff1654;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.stick-button:active {
+    background: #cc0040;
+    transform: scale(0.9);
+}
+
+/* Center Section */
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Touchpad */
+.touchpad {
+    width: 120px;
+    height: 70px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid #1a1a1a;
+    transition: all 0.1s ease;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.touchpad:active {
+    background: #1a1a1a;
+    transform: scale(0.98);
+}
+
+/* Speaker Grille */
+.speaker-grille {
+    width: 60px;
+    height: 20px;
+    background: repeating-linear-gradient(
+        90deg,
+        #333 0px,
+        #333 8px,
+        #555 8px,
+        #555 10px
+    );
+    border-radius: 10px;
+}
+
+/* Center Buttons */
+.center-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.center-btn {
+    padding: 8px 15px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    transition: all 0.1s ease;
+    text-transform: uppercase;
+}
+
+.center-btn:active {
+    background: #222;
+    transform: scale(0.95);
+}
+
+/* Right Side - Face Buttons and Right Stick */
+.right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Face Buttons */
+.face-buttons {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    align-items: center;
+    justify-items: center;
+}
+
+.face-btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    transition: all 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.triangle-btn {
+    background: #0070ff;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.circle-btn {
+    background: #ff1654;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.cross-btn {
+    background: #0070ff;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.square-btn {
+    background: #ff1654;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.face-btn:active {
+    transform: scale(0.9);
+}
+
+/* Shoulder Buttons */
+.shoulder-buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 20px;
+}
+
+.shoulder-btn {
+    padding: 8px 12px;
+    background: #555;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    transition: all 0.1s ease;
+}
+
+.shoulder-btn:active {
+    background: #333;
+    transform: scale(0.95);
+}
+
+/* Bottom Buttons */
+.bottom-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.bottom-btn {
+    width: 40px;
+    height: 40px;
+    background: #555;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.1s ease;
+}
+
+.bottom-btn:active {
+    background: #333;
+    transform: scale(0.95);
+}
+
+/* LED Indicator */
+.led-indicator {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 12px;
+    height: 12px;
+    background: #00ff00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Input Display */
+.input-display {
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid #0070ff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.input-display h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.input-log {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.input-log p {
+    color: #0070ff;
+    margin: 5px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .overlay-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ps5-controller {
+        width: 100%;
+        max-width: 400px;
+        height: 250px;
+    }
+
+    .input-display {
+        width: 100%;
+        max-width: 400px;
+    }
+}
